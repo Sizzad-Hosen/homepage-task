@@ -34,7 +34,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       }`}
       aria-hidden={!isOpen}
     >
-      <div className="flex min-h-screen flex-col px-5 py-5">
+      <div className="flex min-h-screen flex-col p-2 px-5 py-5">
         <div className="flex items-center justify-between">
           <a
             href="#"
