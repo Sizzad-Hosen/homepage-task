@@ -137,21 +137,20 @@ export default function HeroSection() {
               <span className="text-[32px] leading-none">›</span>
             </div>
           </div>
+{/* Big Heading */}
+<div className="mt-7 text-center">
+  <h1 className="text-[clamp(2rem,17vw,5.4rem)] font-black leading-[0.95] tracking-[-0.095em] text-white drop-shadow-xl">
+    We Create
+    <br />
+    Category
+    <br />
+    Leaders
+  </h1>
 
-          {/* Big Heading */}
-          <div className="mt-7 text-center">
-            <h1 className="text-[clamp(4rem,17vw,5.4rem)] font-black leading-[0.78] tracking-[-0.095em] text-white drop-shadow-xl">
-              We Create
-              <br />
-              Category
-              <br />
-              Leaders
-            </h1>
-
-            <p className="mt-5 text-[19px] font-bold leading-none tracking-[-0.06em] text-white drop-shadow-lg">
-              on every searchable platform
-            </p>
-          </div>
+  <p className="mt-8 text-[19px] font-bold leading-none tracking-[-0.06em] text-white drop-shadow-lg">
+    on every searchable platform
+  </p>
+</div>
 
           <div className="flex-1" />
 
