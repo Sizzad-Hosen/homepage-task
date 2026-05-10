@@ -3,6 +3,7 @@ import AgencyBehindSection from "@/sections/AgencyBehindSection";
 import AwardsSection from "@/sections/AwardsSection";
 import DrivingSection from "@/sections/DrivingSection";
 import FeaturedWorkSection from "@/sections/FeaturedWorkSection";
+import Footer from "@/sections/Footer";
 import HeroSection from "@/sections/HeroSection";
 import LegacySection from "@/sections/LegacySection";
 import ServicesSection from "@/sections/ServicesSection";
@@ -28,6 +29,7 @@ export default function Home() {
         <AgencyBehindSection></AgencyBehindSection> 
         <LegacySection></LegacySection>
         <WhatsNewSection></WhatsNewSection>
+        <Footer></Footer>
       </main>
     </>
   );
