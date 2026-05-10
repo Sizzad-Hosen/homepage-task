@@ -4,6 +4,7 @@ import AwardsSection from "@/sections/AwardsSection";
 import DrivingSection from "@/sections/DrivingSection";
 import FeaturedWorkSection from "@/sections/FeaturedWorkSection";
 import HeroSection from "@/sections/HeroSection";
+import LegacySection from "@/sections/LegacySection";
 import ServicesSection from "@/sections/ServicesSection";
 
 
@@ -24,6 +25,7 @@ export default function Home() {
          <FeaturedWorkSection></FeaturedWorkSection>
           <ServicesSection></ServicesSection>
         <AgencyBehindSection></AgencyBehindSection> 
+        <LegacySection></LegacySection>
       </main>
     </>
   );
