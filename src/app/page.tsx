@@ -1,4 +1,5 @@
 
+import AgencyBehindSection from "@/sections/AgencyBehindSection";
 import AwardsSection from "@/sections/AwardsSection";
 import DrivingSection from "@/sections/DrivingSection";
 import FeaturedWorkSection from "@/sections/FeaturedWorkSection";
@@ -22,6 +23,7 @@ export default function Home() {
          <DrivingSection></DrivingSection>
          <FeaturedWorkSection></FeaturedWorkSection>
           <ServicesSection></ServicesSection>
+        <AgencyBehindSection></AgencyBehindSection> 
       </main>
     </>
   );
