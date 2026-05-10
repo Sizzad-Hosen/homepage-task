@@ -1,4 +1,5 @@
 
+import AwardsSection from "@/sections/AwardsSection";
 import HeroSection from "@/sections/HeroSection";
 
 
@@ -14,6 +15,7 @@ export default function Home() {
 </div>
       <main className=" bg-white">
         <HeroSection />
+         <AwardsSection />
       </main>
     </>
   );
