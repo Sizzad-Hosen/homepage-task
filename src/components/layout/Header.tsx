@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, Plus, Minus } from "lucide-react";
-
+import { X, Plus, Minus, ArrowBigDown, ArrowDown, ChevronUp,  } from "lucide-react";
+import { ChevronDown } from 'lucide-react';
 type MenuItem = {
   label: string;
   href?: string;
@@ -159,7 +159,7 @@ export default function Header() {
               ? "fixed left-0 top-0 w-full bg-black px-5 py-5 text-white"
               : isHeroDocked
                 ? "fixed left-1/2 top-[34px] w-[calc(100%-24px)] max-w-[430px] -translate-x-1/2 bg-transparent px-4 py-5 text-white"
-                : "fixed left-0 top-0 w-full bg-[#f4f4f1] px-3 py-3 text-black shadow-sm"
+                : "fixed left-0 top-0 w-full bg-white/80 backdrop-blur-md px-3 py-3 text-black shadow-sm"
           }
           ${
             isNavbarVisible || isOpen || isHeroDocked
@@ -168,11 +168,11 @@ export default function Header() {
           }
         `}
       >
-        <div className="mx-auto flex max-w-[430px] items-center justify-between">
+        <div className="mx-auto flex max-w-[430px] items-center pt-3 justify-between">
           <a
             href="/"
             onClick={closeMenu}
-            className="text-[22px] font-semibold leading-none tracking-[-0.06em] text-current"
+            className="text-[22px] font-semibold leading-none tracking-[-0.06em]  text-current"
           >
             Rise at Seven
             <span className="align-top text-[9px]">®</span>
@@ -187,7 +187,10 @@ export default function Header() {
             {isOpen ? (
               <X size={27} strokeWidth={2} />
             ) : (
-              <Menu size={27} strokeWidth={2} />
+              <span className="flex flex-col items-center gap-[3px] leading-none">
+                <span className="block h-[2px] w-[16px] rounded-full bg-current" />
+                <span className="mt-[2px] block h-[2px] w-[16px] rounded-full bg-current" />
+              </span>
             )}
           </button>
         </div>
@@ -218,9 +221,9 @@ export default function Header() {
 
                           <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30">
                             {isActive ? (
-                              <Minus size={18} strokeWidth={2} />
+                               <ChevronUp />
                             ) : (
-                              <Plus size={18} strokeWidth={2} />
+ <ChevronDown />
                             )}
                           </span>
                         </button>

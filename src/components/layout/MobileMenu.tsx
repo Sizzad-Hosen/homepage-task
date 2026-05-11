@@ -1,5 +1,5 @@
 "use client";
-
+import { TbMenu } from "react-icons/tb";
 import { useEffect, useState } from "react";
 import { Minus, Plus, X } from "lucide-react";
 import { mobileMenuItems } from "@/data/menu.data";
@@ -44,15 +44,17 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <span className="block">RISE</span>
             <span className="block">AT SEVEN</span>
           </a>
-
-          <button
-            type="button"
-            onClick={onClose}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-black"
-            aria-label="Close menu"
-          >
-            <X size={24} strokeWidth={2.5} />
-          </button>
+<button
+  type="button"
+  onClick={onClose}
+  className="relative flex h-10 w-10 items-center justify-center"
+  aria-label="Menu"
+>
+  <div className="flex flex-col gap-[3px]">
+    <span className="block h-[2px] w-[16px] rounded-full bg-white"></span>
+  
+  </div>
+</button>
         </div>
 
         <nav className="mt-12 flex-1" aria-label="Mobile navigation">

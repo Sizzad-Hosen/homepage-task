@@ -15,12 +15,11 @@ export default function Home() {
   return (
     <>
       <Header />
-   <div className="bg-white p-2 ">
-  <h1 className="text-center border rounded-xl  text-black bg-teal-300 ">
-    The Category Leaderboard - LIVE NOW
+<div className="bg-white p-3 pt-2 py-[1px]">
+  <h1 className="h-[29px] flex items-center justify-center gap-1 rounded-xl bg-[#A7F3DE] text-[12px] font-bold text-black">
+    <span>🎉</span>
+    <span>The Category Leaderboard - Live Now</span>
   </h1>
-
-  {/* <Header /> */}
 </div>
       <main className=" bg-white">
         <HeroSection />
