@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { X, Plus, Minus, ArrowBigDown, ArrowDown, ChevronUp,  } from "lucide-react";
+import { X,  ChevronUp,  } from "lucide-react";
 import { ChevronDown } from 'lucide-react';
 type MenuItem = {
   label: string;
@@ -156,7 +156,7 @@ export default function Header() {
           z-[999] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden
           ${
             isOpen
-              ? "fixed left-0 top-0 w-full bg-black px-5 py-5 text-white"
+              ? "fixed left-0 top-0 w-full  px-5 py-5 text-white"
               : isHeroDocked
                 ? "fixed left-1/2 top-[34px] w-[calc(100%-24px)] max-w-[430px] -translate-x-1/2 bg-transparent px-4 py-5 text-white"
                 : "fixed left-0 top-0 w-full bg-white/80 backdrop-blur-md px-3 py-3 text-black shadow-sm"
