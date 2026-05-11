@@ -141,7 +141,3 @@ import NewSection from "@/sections/NewSection";
 - `npm run dev` — start dev server
 - `npm run build` — build production output
 - `npm start` — run production server
-
-## 📄 License
-
-All rights reserved © 2025 Rise at Seven Ltd.
