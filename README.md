@@ -1,190 +1,147 @@
 # Rise at Seven - Homepage
 
-Award-winning search-first content marketing agency website built with Next.js, React, TypeScript, and Tailwind CSS.
+A content marketing agency homepage built with Next.js 16, React 19, TypeScript, and Tailwind CSS.
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
-- npm or yarn
+- Node.js 22+
+- npm
 
 ### Installation
 
 ```bash
-# Install dependencies
 npm install
-
-# Run development server
 npm run dev
-
-# Open http://localhost:3000 in your browser
 ```
+
+Open `http://localhost:3000` in your browser.
 
 ### Build for Production
 
 ```bash
-# Build the project
 npm run build
-
-# Start production server
 npm start
 ```
 
-## 📁 Project Structure
+## 📁 Current Project Structure
 
 ```
 src/
-├── app/                          # Next.js app directory
-│   ├── layout.tsx               # Root layout component
-│   ├── page.tsx                 # Home page
-│   └── globals.css              # Global styles
-│
-├── components/                   # React components
-│   ├── Header/                  # Header section components
-│   │   ├── Header.tsx          # Main header component
-│   │   ├── Navigation.tsx       # Navigation menu
-│   │   ├── MobileMenu.tsx       # Mobile menu component
-│   │   └── NotificationBanner.tsx # Top banner
-│   │
-│   ├── Hero/                    # Hero section
-│   │   └── Hero.tsx            # Main hero component
-│   │
-│   ├── Sections/                # Page sections
-│   │   ├── CaseStudiesSection.tsx  # Case studies/work section
-│   │   ├── ServicesSection.tsx     # Services section
-│   │   ├── BlogSection.tsx         # Blog/news section
-│   │   └── CTASection.tsx          # Call-to-action section
-│   │
-│   ├── Footer/                  # Footer components
-│   │   ├── Footer.tsx          # Main footer
-│   │   └── FooterLinks.tsx      # Footer links
-│   │
-│   ├── ui/                      # Reusable UI components
-│   │   └── (future UI components)
-│   │
-│   └── index.ts                # Component exports
-│
-├── constants/                   # Constants and data
-│   └── index.ts                # Navigation, case studies, services, blog data
-│
-├── types/                       # TypeScript type definitions
-│   └── index.ts                # All type interfaces
-│
-└── utils/                       # Utility functions
-    └── index.ts                # Helper functions (cn, scroll, format)
+├── app/
+│   ├── layout.tsx        # Root layout and metadata
+│   ├── page.tsx          # Home page rendering all sections
+│   └── globals.css       # Global styles
+├── components/
+│   └── layout/
+│       ├── Header.tsx    # Header with mobile toggle
+│       └── MobileMenu.tsx # Mobile menu overlay
+├── data/
+│   ├── agency.data.ts
+│   ├── awards.data.ts
+│   ├── featuredWork.data.ts
+│   ├── footer.data.ts
+│   ├── legacy.data.ts
+│   ├── menu.data.ts
+│   ├── services.data.ts
+│   └── whatsNew.data.ts
+├── sections/
+│   ├── AgencyBehindSection.tsx
+│   ├── AwardsSection.tsx
+│   ├── DrivingSection.tsx
+│   ├── FeaturedWorkSection.tsx
+│   ├── Footer.tsx
+│   ├── HeroSection.tsx
+│   ├── LegacySection.tsx
+│   ├── ServicesSection.tsx
+│   └── WhatsNewSection.tsx
+├── ui/                   # Reusable UI primitives (empty/placeholder)
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+├── tailwind.config.ts
+└── tsconfig.json
 ```
 
-## 🎨 Components Overview
+## 🎨 Current Page Sections
 
-### Header Components
-- **Header**: Main navigation header with logo and menu
-- **Navigation**: Desktop navigation menu
-- **MobileMenu**: Mobile hamburger menu
-- **NotificationBanner**: Top notification banner
+- `HeroSection` - main hero banner with background image and category highlight
+- `AwardsSection` - marquee of brand logos
+- `DrivingSection` - demand and discovery copy block with calls to action
+- `FeaturedWorkSection` - featured work cards with image overlays
+- `ServicesSection` - service list with image thumbnails
+- `AgencyBehindSection` - animated category growth marquee
+- `LegacySection` - horizontal scroll legacy cards with progress indicator
+- `WhatsNewSection` - latest posts slider with progress bar
+- `Footer` - footer links, newsletter, social icons, and company info
 
-### Page Sections
-- **Hero**: Large hero section with headline and CTA
-- **CaseStudiesSection**: Grid of case study cards
-- **ServicesSection**: Grid of service cards
-- **BlogSection**: Grid of blog post cards
-- **CTASection**: Call-to-action section
+## 📦 Data Folder
 
-### Footer
-- **Footer**: Main footer with company info and links
-- **FooterLinks**: Footer column links
+All section content is stored in `src/data/`. Current data files:
 
-## 📊 Data Structure
+- `menu.data.ts` — mobile menu items and submenu links
+- `services.data.ts` — services displayed in ServicesSection
+- `awards.data.ts` — brand logos for AwardsSection
+- `featuredWork.data.ts` — featured project cards for FeaturedWorkSection
+- `agency.data.ts` — marquee items for AgencyBehindSection
+- `legacy.data.ts` — legacy carousel cards for LegacySection
+- `whatsNew.data.ts` — blog cards for WhatsNewSection
+- `footer.data.ts` — footer link lists and social items
 
-### Data Files
-All static data is stored in `src/constants/index.ts`:
-- Navigation items
-- Case studies
-- Services
-- Blog posts
-- Awards
-- Footer information
-- Company info
+### How data is used
+1. Define static arrays in `src/data/*.ts`
+2. Import the shared data into a section component
+3. Render the items in the section UI
 
-### Type Definitions
-All TypeScript interfaces in `src/types/index.ts`:
-- `NavItem`
-- `CaseStudy`
-- `Service`
-- `BlogPost`
-- `FooterLink`
-- `FooterColumn`
+Example:
 
-## 🛠️ Utilities
+```ts
+import { services } from "@/data/services.data";
+```
 
-### Available Utilities (`src/utils/index.ts`)
-- `cn()` - Tailwind CSS class name combiner
-- `scrollToElement()` - Smooth scroll to element
-- `formatDate()` - Format date strings
+## 🛠️ How the current sections are wired
 
-## 🎯 Features
+- `src/app/page.tsx` imports all section components and renders them in page order
+- Each section component imports its own data from `src/data`
+- The header menu uses `src/data/menu.data.ts` for mobile navigation
+- `HeroSection` uses `next/image` for the hero background and local public assets
 
-✅ Fully responsive design (mobile, tablet, desktop)
-✅ Mobile hamburger menu
-✅ Component-based architecture
-✅ TypeScript support
-✅ Tailwind CSS styling
-✅ Professional folder structure
-✅ Reusable components
-✅ Constants management
-✅ Type safety
-✅ SEO optimized metadata
+## ✨ How to add a new section
 
-## 📝 Customization
+1. Add a new file in `src/sections/`, for example `NewSection.tsx`
+2. Add shared content in `src/data/newSection.data.ts` if needed
+3. Import and render the section in `src/app/page.tsx`
 
-### Adding New Sections
-1. Create a new component in `src/components/Sections/`
-2. Import and use in `src/app/page.tsx`
+Example:
 
-### Updating Content
-1. Edit data in `src/constants/index.ts`
-2. Components will automatically reflect changes
+```tsx
+import NewSection from "@/sections/NewSection";
+```
 
-### Styling
-- All styling uses Tailwind CSS classes
-- Global styles in `src/app/globals.css`
-- Component-scoped styles using Tailwind classes
+4. Add `NewSection` inside the `<main>` block in `src/app/page.tsx`
 
-## 🔧 Configuration Files
+## 💡 Notes
 
-- **tsconfig.json** - TypeScript configuration with path aliases
-- **tailwind.config.ts** - Tailwind CSS configuration
-- **next.config.ts** - Next.js configuration
-- **postcss.config.mjs** - PostCSS configuration
-- **package.json** - Project dependencies and scripts
+- `src/data/` is the source of truth for static content
+- `src/sections/` contains page layout and rendering logic
+- `src/components/layout/` contains header and mobile menu logic
+- Keep styles in Tailwind classes inside each component
+- Use `public/` for static image assets referenced by `next/image`
 
-## 📦 Dependencies
+## 🔧 Configuration
 
-- **next** - React framework
-- **react** - UI library
-- **react-dom** - React DOM utilities
-- **typescript** - Type safety
-- **tailwindcss** - Utility-first CSS
-- **eslint** - Code linting
+- `next.config.ts` — Next.js configuration including image hosts
+- `postcss.config.mjs` — PostCSS plugins for Tailwind
+- `tailwind.config.ts` — Tailwind config
+- `tsconfig.json` — TypeScript paths and compiler settings
 
-## 🚀 Best Practices
+## 📌 Commands
 
-- ✅ Components are small and reusable
-- ✅ Data is separated from components
-- ✅ Types are defined for all data structures
-- ✅ Utility functions for common tasks
-- ✅ Proper folder organization
-- ✅ Clear component naming conventions
-- ✅ TypeScript for type safety
+- `npm install` — install dependencies
+- `npm run dev` — start dev server
+- `npm run build` — build production output
+- `npm start` — run production server
 
 ## 📄 License
 
 All rights reserved © 2025 Rise at Seven Ltd.
-
-## 👨‍💻 Development Notes
-
-- Use `npm run dev` during development
-- Use `npm run build` to create production build
-- Use `npm run lint` to check code quality
-- All components should be exported from `src/components/index.ts`
-- All data should be in `src/constants/index.ts`
-- All types should be in `src/types/index.ts`
