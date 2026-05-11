@@ -1,11 +1,4 @@
-const logos = [
-  { name: "SharkNinja", style: "shark" },
-  { name: "Capital One", style: "capital" },
-  { name: "PrettyLittleThing", style: "plt" },
-  { name: "MyProtein", style: "myprotein" },
-  { name: "Boohoo", style: "boohoo" },
-  { name: "Gymshark", style: "gymshark" },
-];
+import { logos } from "@/data/awards.data";
 
 export default function AwardsSection() {
   return (

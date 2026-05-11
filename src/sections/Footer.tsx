@@ -1,8 +1,4 @@
-const socialLinks = ["f", "𝕏", "in", "▶", "♪", "◎"];
-
-const leftLinks = ["Services", "Work", "About", "Culture", "Meet The Risers"];
-const rightLinks = ["Testimonials", "Blog & Resources", "Webinars", "Careers"];
-const locations = ["Sheffield", "Manchester", "London", "New York", "Contact"];
+import { socialLinks, leftLinks, rightLinks, locations } from "@/data/footer.data";
 
 function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (

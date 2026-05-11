@@ -1,27 +1,11 @@
-const items = [
-  {
-    text: "Chasing Category Growth",
-    image:
-      "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=300&auto=format&fit=crop",
-  },
-  {
-    text: "Creating Search Demand",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=300&auto=format&fit=crop",
-  },
-  {
-    text: "Building Brand Discovery",
-    image:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=300&auto=format&fit=crop",
-  },
-];
+import { agencyItems } from "@/data/agency.data";
 
 export default function ChasingTextSection() {
   return (
     <section className="overflow-hidden bg-[#f4f4f1] py-[18px] text-black">
       <div className="relative overflow-hidden">
         <div className="flex w-max animate-chasing-marquee items-center">
-          {[...items, ...items, ...items].map((item, index) => (
+          {[...agencyItems, ...agencyItems, ...agencyItems].map((item, index) => (
             <div
               key={`${item.text}-${index}`}
               className="flex items-center gap-[14px] pr-[28px]"

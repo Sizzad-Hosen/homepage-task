@@ -1,59 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { X,  ChevronUp,  } from "lucide-react";
-import { ChevronDown } from 'lucide-react';
-type MenuItem = {
-  label: string;
-  href?: string;
-  children?: string[];
-};
+import { X, ChevronDown, ChevronUp } from "lucide-react";
+import { MenuItem, mobileMenuItems } from "@/data/menu.data";
 
-const menuItems: MenuItem[] = [
-  {
-    label: "Services",
-    children: [
-      "Digital PR",
-      "Organic Social & Content",
-      "Search & Growth Strategy",
-      "Content Experience",
-      "Data & Insights",
-      "Onsite SEO",
-    ],
-  },
-  {
-    label: "Industries",
-    children: ["Retail", "Finance", "Travel", "Beauty", "B2B"],
-  },
-  {
-    label: "International",
-    children: ["United Kingdom", "United States", "Europe"],
-  },
-  {
-    label: "About",
-    children: ["Our Story", "Team", "Awards", "Culture"],
-  },
-  {
-    label: "Work",
-    href: "#work",
-  },
-  {
-    label: "Careers",
-    href: "#careers",
-  },
-  {
-    label: "Blog & Resources",
-    children: ["Blog", "Insights", "Webinars", "Reports"],
-  },
-  {
-    label: "Webinar",
-    href: "#webinar",
-  },
-  {
-    label: "Get in touch",
-    href: "#contact",
-  },
-];
+const menuItems: MenuItem[] = mobileMenuItems;
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -198,7 +149,7 @@ export default function Header() {
 
       {/* MOBILE MENU OVERLAY - NO SECOND HEADER */}
       {isOpen && (
-        <div className="fixed inset-0 z-[998] overflow-y-auto bg-black px-5 pb-10 pt-[96px] text-white md:hidden">
+        <div className="fixed inset-0 z-[998] overflow-hidden bg-black px-5 pb-10 pt-[96px] text-white md:hidden">
           <nav>
             <ul>
               {menuItems.map((item) => {
@@ -232,13 +183,13 @@ export default function Header() {
                           <div className="pb-5">
                             <ul className="space-y-3">
                               {item.children?.map((child) => (
-                                <li key={child}>
+                                <li key={child.label}>
                                   <a
-                                    href="#"
+                                    href={child.href || "#"}
                                     onClick={closeMenu}
                                     className="block rounded-xl bg-white/5 px-4 py-3 text-[15px] font-semibold text-white/75"
                                   >
-                                    {child}
+                                    {child.label}
                                   </a>
                                 </li>
                               ))}
